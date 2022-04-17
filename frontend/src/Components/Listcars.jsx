@@ -15,7 +15,15 @@ const Listcars = () => {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            {Cars.map((cars) => (
+              <tr key={cars.id}>
+                <td>{cars.carname}</td>
+                <td>{cars.carnumber}</td>
+                <td>{cars.drivername}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
