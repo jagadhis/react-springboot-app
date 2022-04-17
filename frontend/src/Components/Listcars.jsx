@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import CarsService from "./Services/CarsService";
 
 const Listcars = () => {
   const [Cars, setcars] = useState([]);
+
+  componentDidMount();
+  {
+    CarsService.getCars().then((res) => {
+      setcars({ Cars: res.data });
+    });
+  }
   return (
     <div>
       <h2 className="text-center">Cars list</h2>
