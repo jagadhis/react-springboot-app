@@ -5,7 +5,7 @@ const Listcars = () => {
   const [Cars, setcars] = useState([]);
 
   const BASEURL = "http://localhost:8080/api/v1/cars";
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get(BASEURL).then((res) => {
       setcars(res.data);
     });
