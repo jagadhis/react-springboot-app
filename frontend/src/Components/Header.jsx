@@ -1,7 +1,19 @@
 import React from "react";
 
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <div>
+      <header>
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+          <div>
+            <a href="/" className="navbar-brand">
+              Travel Management App
+            </a>
+          </div>
+        </nav>
+      </header>
+    </div>
+  );
 };
 
 export default Header;
