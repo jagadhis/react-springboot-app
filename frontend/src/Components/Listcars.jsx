@@ -25,7 +25,7 @@ const Listcars = () => {
         </button>
       </div>
       <div className="row">
-        <table className="table table-striped table-bordered table-hover">
+        <table className="table table-striped table-bordered ">
           <thead>
             <tr>
               <th>Car Name</th>
