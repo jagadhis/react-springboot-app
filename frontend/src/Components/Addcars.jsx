@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Addcars = () => {
+  const [Carname, SetCarname] = useState("");
+  const [Carnum, SetCarnum] = useState("");
+  const [drivername, Setdrivername] = useState("");
+
   return (
     <div>
       <div className="container">
@@ -15,6 +19,28 @@ const Addcars = () => {
                     placeholder="CarName"
                     name="Carname"
                     className="form-control"
+                    value={Carnum}
+                    onChange={(e) => Setdrivername(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Driver Name:</label>
+                  <input
+                    placeholder="DriverName"
+                    name="Carnumber"
+                    className="form-control"
+                    value={drivername}
+                    onChange={(e) => SetCarname(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Car Name:</label>
+                  <input
+                    placeholder="CarName"
+                    name="Carname"
+                    className="form-control"
+                    value={Carname}
+                    onChange={(e) => SetCarname(e.target.value)}
                   />
                 </div>
               </form>
