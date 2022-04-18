@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Listcars = () => {
   const [Cars, setcars] = useState([]);
-  const [Addcars, addedcars] = useState([]);
+
+  let history = useNavigate();
 
   const BASEURL = "http://localhost:8080/api/v1/cars";
   useEffect(() => {
@@ -12,7 +14,7 @@ const Listcars = () => {
     });
   }, []);
   const addCars = () => {
-    Addcars.history.push("/Addcars");
+    history.push("/Addcars");
   };
   return (
     <div>
