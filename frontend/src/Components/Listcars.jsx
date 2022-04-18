@@ -14,7 +14,7 @@ const Listcars = () => {
     });
   }, []);
   const addCars = () => {
-    history.push("/Addcars");
+    history("/Addcars");
   };
   return (
     <div>
