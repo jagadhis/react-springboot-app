@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Listcars = () => {
   const [Cars, setcars] = useState([]);
+  const [Addcars, addedcars] = useState([]);
 
   const BASEURL = "http://localhost:8080/api/v1/cars";
   useEffect(() => {
@@ -10,9 +11,17 @@ const Listcars = () => {
       setcars(res.data);
     });
   }, []);
+  const addCars = () => {
+    Addcars.history.push("/Addcars");
+  };
   return (
     <div>
       <h2 className="text-center">Cars list</h2>
+      <div className="row">
+        <button className="btn btn-primary" onClick={addCars}>
+          Add cars
+        </button>
+      </div>
       <div className="row">
         <table className="table table-striped table-bordered table-hover">
           <thead>
