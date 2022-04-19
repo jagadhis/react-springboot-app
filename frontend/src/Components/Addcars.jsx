@@ -23,6 +23,18 @@ const Addcars = () => {
           SetCarname(res.data);
         });
     }, []);
+    useeffects(() => {
+      axios.post(BASEURL),
+        then((res) => {
+          SetCarnum(res.data);
+        });
+    }, []);
+    useeffects(() => {
+      axios.post(BASEURL),
+        then((res) => {
+          SetCarname(res.data);
+        });
+    }, []);
   };
   const cancel = () => {
     history("/cars");
