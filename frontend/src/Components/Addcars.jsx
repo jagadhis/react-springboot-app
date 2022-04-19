@@ -8,6 +8,12 @@ const Addcars = () => {
   const [cancel, SetCancel] = useState("");
   const save = (e) => {
     e.preventDefault();
+    let cars = {
+      Carname: Carname,
+      Carnum: Carnum,
+      drivername: drivername,
+    };
+    console.log("Cars=>" + JSON.stringify(cars));
   };
 
   return (
@@ -24,27 +30,27 @@ const Addcars = () => {
                     placeholder="CarName"
                     name="Carname"
                     className="form-control"
-                    value={Carnum}
+                    value={Carname}
                     onChange={(e) => SetCarname(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Car Number:</label>
+                  <input
+                    placeholder="CarNumber"
+                    name="Carnumber"
+                    className="form-control"
+                    value={Carnum}
+                    onChange={(e) => SetCarnum(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
                   <label>Driver Name:</label>
                   <input
                     placeholder="DriverName"
-                    name="Carnumber"
+                    name="drivername"
                     className="form-control"
                     value={drivername}
-                    onChange={(e) => SetCarnum(e.target.value)}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Car Name:</label>
-                  <input
-                    placeholder="CarName"
-                    name="Carname"
-                    className="form-control"
-                    value={Carname}
                     onChange={(e) => Setdrivername(e.target.value)}
                   />
                 </div>
