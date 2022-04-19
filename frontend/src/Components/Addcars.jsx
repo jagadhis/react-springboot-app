@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Addcars = () => {
   const [Carname, SetCarname] = useState("");
   const [Carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
-
-  const [cancel, SetCancel] = useState("");
+  let history = useNavigate();
   const save = (e) => {
     e.preventDefault();
     let cars = {
@@ -14,6 +14,10 @@ const Addcars = () => {
       drivername: drivername,
     };
     console.log("Cars=>" + JSON.stringify(cars));
+  };
+
+  const cancel = () => {
+    history("/cars");
   };
 
   return (
