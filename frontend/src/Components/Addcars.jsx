@@ -1,6 +1,6 @@
-import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Addcars = () => {
   const [Carname, SetCarname] = useState("");
@@ -8,6 +8,33 @@ const Addcars = () => {
   const [drivername, Setdrivername] = useState("");
   let history = useNavigate();
   const BASEURL = "http://localhost:8080/api/v1/cars";
+  useEffect(() => {
+    axios
+      .post(BASEURL, {
+        Carname: "",
+      })
+      .then((res) => {
+        SetCarname(res.data);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .post(BASEURL, {
+        Carnum: "",
+      })
+      .then((res) => {
+        SetCarnum(res.data);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .post(BASEURL, {
+        drivername: "",
+      })
+      .then((res) => {
+        Setdrivername(res.data);
+      });
+  }, []);
   const save = (e) => {
     e.preventDefault();
     let cars = {
@@ -16,25 +43,6 @@ const Addcars = () => {
       drivername: drivername,
     };
     console.log("Cars=>" + JSON.stringify(cars));
-
-    useeffects(() => {
-      axios.post(BASEURL),
-        then((res) => {
-          SetCarname(res.data);
-        });
-    }, []);
-    useeffects(() => {
-      axios.post(BASEURL),
-        then((res) => {
-          SetCarnum(res.data);
-        });
-    }, []);
-    useeffects(() => {
-      axios.post(BASEURL),
-        then((res) => {
-          Setdrivername(res.data);
-        });
-    }, []);
   };
   const cancel = () => {
     history("/cars");
