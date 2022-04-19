@@ -32,7 +32,7 @@ const Addcars = () => {
     useeffects(() => {
       axios.post(BASEURL),
         then((res) => {
-          SetCarname(res.data);
+          Setdrivername(res.data);
         });
     }, []);
   };
