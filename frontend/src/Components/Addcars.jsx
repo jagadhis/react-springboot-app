@@ -20,7 +20,7 @@ const Addcars = () => {
                     name="Carname"
                     className="form-control"
                     value={Carnum}
-                    onChange={(e) => Setdrivername(e.target.value)}
+                    onChange={(e) => SetCarname(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -30,7 +30,7 @@ const Addcars = () => {
                     name="Carnumber"
                     className="form-control"
                     value={drivername}
-                    onChange={(e) => SetCarname(e.target.value)}
+                    onChange={(e) => SetCarnum(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -40,7 +40,7 @@ const Addcars = () => {
                     name="Carname"
                     className="form-control"
                     value={Carname}
-                    onChange={(e) => SetCarname(e.target.value)}
+                    onChange={(e) => Setdrivername(e.target.value)}
                   />
                 </div>
               </form>
