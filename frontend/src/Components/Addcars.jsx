@@ -5,6 +5,11 @@ const Addcars = () => {
   const [Carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
 
+  const [cancel, SetCancel] = useState("");
+  const save = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
       <div className="container">
@@ -43,6 +48,16 @@ const Addcars = () => {
                     onChange={(e) => Setdrivername(e.target.value)}
                   />
                 </div>
+                <button className="btn btn-success" onClick={save}>
+                  Save
+                </button>
+                <button
+                  className="btn btn-danger"
+                  onClick={cancel}
+                  style={{ marginLeft: 10 }}
+                >
+                  Cancel
+                </button>
               </form>
             </div>
           </div>
