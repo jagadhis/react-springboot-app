@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +7,7 @@ const Addcars = () => {
   const [Carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
   let history = useNavigate();
+  const BASEURL = "http://localhost:8080/api/v1/cars";
   const save = (e) => {
     e.preventDefault();
     let cars = {
@@ -14,8 +16,14 @@ const Addcars = () => {
       drivername: drivername,
     };
     console.log("Cars=>" + JSON.stringify(cars));
-  };
 
+    useeffects(() => {
+      axios.post(BASEURL),
+        then((res) => {
+          SetCarname(res.data);
+        });
+    }, []);
+  };
   const cancel = () => {
     history("/cars");
   };
