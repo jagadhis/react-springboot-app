@@ -37,11 +37,14 @@ const Addcars = () => {
   }, []);
   const save = (e) => {
     e.preventDefault();
-    let cars = {
-      Carname: Carname,
-      Carnum: Carnum,
-      drivername: drivername,
+    const cars = {
+      Carname,
+      Carnum,
+      drivername,
     };
+    axios.post(BASEURL, cars).then((res) => {
+      console.log(res.data);
+    });
     console.log("Cars=>" + JSON.stringify(cars));
   };
   const cancel = () => {
