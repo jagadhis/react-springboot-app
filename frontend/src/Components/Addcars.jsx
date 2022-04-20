@@ -3,43 +3,17 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Addcars = () => {
-  const [Carname, SetCarname] = useState("");
-  const [Carnum, SetCarnum] = useState("");
+  const [carname, SetCarname] = useState("");
+  const [carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
   let history = useNavigate();
-  const BASEURL = "http://localhost:8080/api/v1/cars";
-  useEffect(() => {
-    axios
-      .post(BASEURL, {
-        Carname: "",
-      })
-      .then((res) => {
-        SetCarname(res.data);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .post(BASEURL, {
-        Carnum: "",
-      })
-      .then((res) => {
-        SetCarnum(res.data);
-      });
-  }, []);
-  useEffect(() => {
-    axios
-      .post(BASEURL, {
-        drivername: "",
-      })
-      .then((res) => {
-        Setdrivername(res.data);
-      });
-  }, []);
+  const BASEURL = "http://localhost:8080/api/v1/Addcars";
+
   const save = (e) => {
     e.preventDefault();
     const cars = {
-      Carname,
-      Carnum,
+      carname,
+      carnum,
       drivername,
     };
     axios.post(BASEURL, cars).then((res) => {
@@ -65,7 +39,7 @@ const Addcars = () => {
                     placeholder="CarName"
                     name="Carname"
                     className="form-control"
-                    value={Carname}
+                    value={carname}
                     onChange={(e) => SetCarname(e.target.value)}
                   />
                 </div>
@@ -75,7 +49,7 @@ const Addcars = () => {
                     placeholder="CarNumber"
                     name="Carnumber"
                     className="form-control"
-                    value={Carnum}
+                    value={carnum}
                     onChange={(e) => SetCarnum(e.target.value)}
                   />
                 </div>
