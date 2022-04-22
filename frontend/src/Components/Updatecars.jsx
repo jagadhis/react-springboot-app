@@ -26,7 +26,7 @@ const Updatecars = () => {
     });
   };
   useEffect(() => {
-    axios.put(BASEURL).then((res) => {
+    axios.put(BASEURL, id).then((res) => {
       console.log(res.data);
       SetCarname({ carname });
       SetCarnum({ carnum });
