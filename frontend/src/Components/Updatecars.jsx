@@ -18,14 +18,22 @@ const Updatecars = () => {
       carnum,
       drivername,
     };
-    axios.put(BASEURL, cars).then((res) => {
+
+    console.log("Cars=>" + JSON.stringify(cars));
+    console.log("id =>" + JSON.stringify(id));
+    axios.Update(cars, id).then((res) => {
+      history("/cars");
+    });
+  };
+  useEffect(() => {
+    axios.put(BASEURL).then((res) => {
       console.log(res.data);
       SetCarname({ carname });
       SetCarnum({ carnum });
       Setdrivername({ drivername });
     });
-    console.log("Cars=>" + JSON.stringify(cars));
-  };
+  }, []);
+
   const cancel = () => {
     history("/cars");
   };
@@ -69,7 +77,7 @@ const Updatecars = () => {
                   />
                 </div>
                 <button className="btn btn-success" onClick={Update}>
-                  Save
+                  Update
                 </button>
                 <button
                   className="btn btn-danger"
