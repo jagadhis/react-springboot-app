@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Listcars = () => {
   const [Cars, setcars] = useState([]);
+  const [edit, setedit] = useState([]);
 
   let history = useNavigate();
 
@@ -40,6 +41,14 @@ const Listcars = () => {
                 <td>{cars.carname}</td>
                 <td>{cars.carnum}</td>
                 <td>{cars.drivername}</td>
+                <td>
+                  <button
+                    onClick={() => edit(cars.id)}
+                    className="btn btn-info"
+                  >
+                    Update
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
