@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Updatecars = () => {
-  const [id, setid] = useState([]);
+  const id = useParams();
   const [carname, SetCarname] = useState("");
   const [carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
