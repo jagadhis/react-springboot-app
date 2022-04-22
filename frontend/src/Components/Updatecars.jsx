@@ -3,21 +3,26 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Updatecars = () => {
+  const [id, setid] = useState([]);
   const [carname, SetCarname] = useState("");
   const [carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
   let history = useNavigate();
-  const BASEURL = "http://localhost:8080/api/v1/Addcars";
+  const BASEURL = "http://localhost:8080/api/v1/cars/{id}";
 
-  const save = (e) => {
+  const Update = (e) => {
     e.preventDefault();
     const cars = {
+      id,
       carname,
       carnum,
       drivername,
     };
-    axios.post(BASEURL, cars).then((res) => {
+    axios.put(BASEURL, cars).then((res) => {
       console.log(res.data);
+      SetCarname({ carname });
+      SetCarnum({ carnum });
+      Setdrivername({ drivername });
     });
     console.log("Cars=>" + JSON.stringify(cars));
   };
@@ -63,7 +68,7 @@ const Updatecars = () => {
                     onChange={(e) => Setdrivername(e.target.value)}
                   />
                 </div>
-                <button className="btn btn-success" onClick={save}>
+                <button className="btn btn-success" onClick={Update}>
                   Save
                 </button>
                 <button
