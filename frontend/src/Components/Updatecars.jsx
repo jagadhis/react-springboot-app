@@ -13,17 +13,12 @@ const Updatecars = () => {
   const Update = (e) => {
     e.preventDefault();
     const cars = {
-      id,
       carname,
       carnum,
       drivername,
     };
 
     console.log("Cars=>" + JSON.stringify(cars));
-    console.log("id =>" + JSON.stringify(id));
-    axios.Update(cars, id).then((res) => {
-      history("/cars");
-    });
   };
   useEffect(() => {
     axios.put(BASEURL, id).then((res) => {
