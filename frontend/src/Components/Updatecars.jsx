@@ -3,27 +3,24 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Updatecars = () => {
-  const id = useParams();
+  const { id } = useParams();
   const [carname, SetCarname] = useState("");
   const [carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
   const [update, SetUpdate] = useState("");
   let history = useNavigate();
-  const BASEURL = "http://localhost:8080/api/v1/cars/id";
+  const BASEURL = `http://localhost:8080/api/v1/cars/${id}`;
   useEffect(() => {
-    axios.put(BASEURL, id).then((res) => {
+    axios.get(BASEURL).then((res) => {
       let update = res.data;
-      console.log(res.data);
-      SetUpdate({
-        carname: update.carname,
-        carnum: update.carnum,
-        drivername: update.drivername,
-      });
-      // SetCarname({ carname });
-      // SetCarnum({ carnum });
-      // Setdrivername({ drivername });
+      SetCarname(update.carname);
+      SetCarnum(update.carnum);
+      Setdrivername(update.drivername);
+
+      console.log(update);
     });
-  }, [id]);
+  }, []);
+  console.log(id);
   const Update = (e) => {
     e.preventDefault();
     const cars = {
@@ -33,6 +30,23 @@ const Updatecars = () => {
     };
 
     console.log("Cars=>" + JSON.stringify(cars));
+    axios
+      .put(BASEURL, {
+        id: id,
+        drivername: drivername,
+        carnum: carnum,
+        carname: carname,
+      })
+      .then((res) => {
+        let update = res.data;
+        console.log(res.data);
+        SetUpdate({
+          carname: update.carname,
+          carnum: update.carnum,
+          drivername: update.drivername,
+        });
+        //
+      });
   };
 
   const cancel = () => {
