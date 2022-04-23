@@ -20,7 +20,7 @@ const Updatecars = () => {
       console.log(update);
     });
   }, []);
-  console.log(id);
+
   const Update = (e) => {
     e.preventDefault();
     const cars = {
