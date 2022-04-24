@@ -23,12 +23,13 @@ const Listcars = () => {
     history(`/Updatecars/${id}`);
   };
 
-  const deletecars = () => {
+  const deletecars = (id) => {
     axios.delete(DELETEURL, id).then((res) => {
       setcars({ Cars: Cars.filter((cars) => cars.id !== id) });
     });
   };
   console.log(id);
+  console.log(Cars);
   return (
     <div>
       <h2 className="text-center">Cars list</h2>
