@@ -24,10 +24,12 @@ const Listcars = () => {
   };
 
   const deletecars = (id) => {
-    axios.delete(DELETEURL, id).then((res) => {
-      setcars({ Cars: Cars.filter((cars) => cars.id !== id) });
+    axios.delete(DELETEURL).then((res) => {
+      const del = Cars.filter((car) => id !== car.id);
+      setcars(del);
     });
   };
+  console.log(deletecars);
   console.log(id);
   console.log(Cars);
   return (
