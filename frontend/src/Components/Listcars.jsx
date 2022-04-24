@@ -34,6 +34,10 @@ const Listcars = () => {
   console.log(deletecars);
   console.log(id);
   console.log(Cars);
+
+  const viewcars = (id) => {
+    history(`/viewcars/${id}`);
+  };
   return (
     <div>
       <h2 className="text-center">Cars list</h2>
@@ -71,6 +75,13 @@ const Listcars = () => {
                     className="btn btn-danger"
                   >
                     Delete
+                  </button>
+                  <button
+                    style={{ marginLeft: "10px" }}
+                    onClick={() => viewcars(cars.id)}
+                    className="btn btn-info"
+                  >
+                    View
                   </button>
                 </td>
               </tr>

@@ -5,6 +5,7 @@ import Addcars from "./Components/Addcars";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Updatecars from "./Components/Updatecars";
+import Viewcars from "./Components/Viewcars";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Listcars />}></Route>
             <Route path="/cars" element={<Listcars />}></Route>
             <Route path="/Addcars" element={<Addcars />}></Route>
+            <Route path="/Viewcars/:id" element={<Viewcars />}></Route>
             <Route path="/Updatecars/:id" element={<Updatecars />}></Route>
           </Routes>
         </div>
