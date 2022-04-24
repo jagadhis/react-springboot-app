@@ -92,7 +92,7 @@ const Updatecars = () => {
                   />
                 </div>
                 <button className="btn btn-success" onClick={Update}>
-                  Update
+                  Save
                 </button>
                 <button
                   className="btn btn-danger"
