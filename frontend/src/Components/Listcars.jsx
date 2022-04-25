@@ -71,8 +71,8 @@ const Listcars = () => {
                 <td>{cars.drivername}</td>
                 <td>{cars.startkm}</td>
                 <td>{cars.endkm}</td>
-                <td>{cars.totalhr}</td>
-                <td>{cars.totalkm}</td>
+                <td>{cars.totalHr}</td>
+                <td>{cars.totalKm}</td>
                 <td>{cars.amount}</td>
                 <td>
                   <button

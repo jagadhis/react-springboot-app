@@ -9,8 +9,8 @@ const Updatecars = () => {
   const [drivername, Setdrivername] = useState("");
   const [startkm, Setstartkm] = useState("");
   const [endkm, Setendkm] = useState("");
-  const [totalhr, Settotalhr] = useState("");
-  const [totalkm, Settotalkm] = useState("");
+  const [totalHr, SettotalHr] = useState("");
+  const [totalKm, SettotalKm] = useState("");
   const [amount, Setamount] = useState("");
   const [update, SetUpdate] = useState("");
   let history = useNavigate();
@@ -23,8 +23,8 @@ const Updatecars = () => {
       Setdrivername(update.drivername);
       Setstartkm(update.startkm);
       Setendkm(update.endkm);
-      Settotalhr(update.totalhr);
-      Settotalkm(update.totalkm);
+      SettotalHr(update.totalHr);
+      SettotalKm(update.totalKm);
       Setamount(update.setamount);
 
       console.log(update);
@@ -39,8 +39,8 @@ const Updatecars = () => {
       drivername,
       startkm,
       endkm,
-      totalhr,
-      totalkm,
+      totalHr,
+      totalKm,
       amount,
     };
 
@@ -53,8 +53,8 @@ const Updatecars = () => {
         carname: carname,
         startkm: startkm,
         endkm: endkm,
-        totalhr: totalhr,
-        totalkm: totalkm,
+        totalHr: totalHr,
+        totalKm: totalKm,
         amount: amount,
       })
       .then((res) => {
@@ -66,8 +66,8 @@ const Updatecars = () => {
           drivername: update.drivername,
           startkm: update.startkm,
           endkm: update.endkm,
-          totalhr: update.totalhr,
-          totalkm: update.totalkm,
+          totalHr: update.totalHr,
+          ttotalKm: update.totalKm,
           amount: update.amount,
         });
         //
@@ -140,20 +140,20 @@ const Updatecars = () => {
                   <label>Total Hr:</label>
                   <input
                     placeholder="Total hours"
-                    name="totalhr"
+                    name="totalHr"
                     className="form-control"
-                    value={totalhr}
-                    onChange={(e) => Settotalhr(e.target.value)}
+                    value={totalHr}
+                    onChange={(e) => SettotalHr(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
                   <label>Total Km:</label>
                   <input
                     placeholder="Total Kilometers"
-                    name="totalkm"
+                    name="totalKm"
                     className="form-control"
-                    value={totalkm}
-                    onChange={(e) => Settotalkm(e.target.value)}
+                    value={totalKm}
+                    onChange={(e) => SettotalKm(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
