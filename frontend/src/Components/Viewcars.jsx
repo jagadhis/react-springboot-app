@@ -18,6 +18,10 @@ const Viewcars = () => {
         <h3 className="text-center">View Cars Details</h3>
         <div className="card-body ">
           <div className="row">
+            <label>ID :</label>
+            <div>{Cars.id}</div>
+          </div>
+          <div className="row">
             <label>Car Name:</label>
             <div>{Cars.carname}</div>
           </div>

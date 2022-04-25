@@ -50,18 +50,30 @@ const Listcars = () => {
         <table className="table table-striped table-bordered ">
           <thead>
             <tr>
+              <th>ID</th>
               <th>Car Name</th>
               <th>Car Number</th>
               <th>Driver Name</th>
+              <th>Start km</th>
+              <th>End km</th>
+              <th>Total HR</th>
+              <th>Total Km</th>
+              <th>Amount</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {Cars.map((cars) => (
               <tr key={cars.id}>
+                <td>{cars.id}</td>
                 <td>{cars.carname}</td>
                 <td>{cars.carnum}</td>
                 <td>{cars.drivername}</td>
+                <td>{cars.startkm}</td>
+                <td>{cars.endkm}</td>
+                <td>{cars.totalhr}</td>
+                <td>{cars.totalkm}</td>
+                <td>{cars.amount}</td>
                 <td>
                   <button
                     onClick={() => editcars(cars.id)}
