@@ -33,6 +33,26 @@ const Viewcars = () => {
             <label>Driver Name</label>
             <div>{Cars.drivername}</div>
           </div>
+          <div className="row">
+            <label>Start Km</label>
+            <div>{Cars.startkm}</div>
+          </div>
+          <div className="row">
+            <label>End km</label>
+            <div>{Cars.endkm}</div>
+          </div>
+          <div className="row">
+            <label>Total Hour</label>
+            <div>{Cars.totalHr}</div>
+          </div>
+          <div className="row">
+            <label>Total Kilometres</label>
+            <div>{Cars.totalKm}</div>
+          </div>
+          <div className="row">
+            <label>Amount</label>
+            <div>{Cars.amount}</div>
+          </div>
         </div>
       </div>
     </div>
