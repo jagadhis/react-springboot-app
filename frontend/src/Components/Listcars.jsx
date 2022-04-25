@@ -9,7 +9,7 @@ const Listcars = () => {
   let history = useNavigate();
 
   const BASEURL = "http://localhost:8080/api/v1/cars";
-  const DELETEURL = `http://localhost:8080/api/v1/cars/${id}`;
+
   useEffect(() => {
     axios.get(BASEURL).then((res) => {
       setcars(res.data);
@@ -24,6 +24,7 @@ const Listcars = () => {
   };
 
   const deletecars = (id) => {
+    const DELETEURL = `http://localhost:8080/api/v1/cars/${id}`;
     axios.delete(DELETEURL).then((res) => {
       const del = Cars.filter((car) => id !== car.id);
       setcars(del);
