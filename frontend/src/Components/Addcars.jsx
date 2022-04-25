@@ -6,6 +6,12 @@ const Addcars = () => {
   const [carname, SetCarname] = useState("");
   const [carnum, SetCarnum] = useState("");
   const [drivername, Setdrivername] = useState("");
+  const [startkm, Setstartkm] = useState("");
+  const [endkm, Setendkm] = useState("");
+  const [totalHr, SettotalHr] = useState("");
+  const [totalKm, SettotalKm] = useState("");
+  const [amount, Setamount] = useState("");
+  const [update, SetUpdate] = useState("");
   let history = useNavigate();
   const BASEURL = "http://localhost:8080/api/v1/Addcars";
 
@@ -15,6 +21,11 @@ const Addcars = () => {
       carname,
       carnum,
       drivername,
+      startkm,
+      endkm,
+      totalHr,
+      totalKm,
+      amount,
     };
     axios.post(BASEURL, cars).then((res) => {
       console.log(res.data);
@@ -61,6 +72,56 @@ const Addcars = () => {
                     className="form-control"
                     value={drivername}
                     onChange={(e) => Setdrivername(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Start km:</label>
+                  <input
+                    placeholder="StartKm"
+                    name="startkm"
+                    className="form-control"
+                    value={startkm}
+                    onChange={(e) => Setstartkm(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>End Km:</label>
+                  <input
+                    placeholder="Endkm"
+                    name="endkm"
+                    className="form-control"
+                    value={endkm}
+                    onChange={(e) => Setendkm(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Total Hr:</label>
+                  <input
+                    placeholder="Total hours"
+                    name="totalHr"
+                    className="form-control"
+                    value={totalHr}
+                    onChange={(e) => SettotalHr(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Total Km:</label>
+                  <input
+                    placeholder="Total Kilometers"
+                    name="totalKm"
+                    className="form-control"
+                    value={totalKm}
+                    onChange={(e) => SettotalKm(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Amount:</label>
+                  <input
+                    placeholder="Amount"
+                    name="amount"
+                    className="form-control"
+                    value={amount}
+                    onChange={(e) => Setamount(e.target.value)}
                   />
                 </div>
                 <button className="btn btn-success" onClick={save}>
