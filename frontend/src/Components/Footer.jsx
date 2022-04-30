@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer className="footer">
         <span className="text-muted">
-          All rights reserved 2022 @Jaykay technologies
+          All rights reserved 2022 @Ayyappa Travels
         </span>
       </footer>
     </div>
